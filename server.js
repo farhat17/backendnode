@@ -50,7 +50,7 @@ app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'https://jobportal-eta-six.vercel.app/',
+  origin: process.env.FRONTEND_URL || 'https://jobportal-eta-six.vercel.app',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
