@@ -24,7 +24,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 // Security middleware
 app.use(helmet({
@@ -124,12 +124,12 @@ const startServer = async () => {
 
     app.listen(PORT, () => {
       console.log(`
-🚀 Job Portal Backend Server Started!
+🚀 Job Portal Backend (Production)
 📍 Port: ${PORT}
-🌍 Environment: ${process.env.NODE_ENV || 'development'}
-📊 Database: ${process.env.DB_NAME || 'job_portal'}
-🔗 API URL: http://localhost:${PORT}/api
-📁 Uploads: http://localhost:${PORT}/uploads
+🌍 Environment: ${process.env.NODE_ENV}
+📊 Database: ${process.env.DB_NAME}
+🔗 Base API: /api
+📁 Uploads: /uploads
       `);
     });
   } catch (error) {
