@@ -9,6 +9,10 @@ const dbConfig = {
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_NAME || 'job_portal',
   port: process.env.DB_PORT || 3306,
+  ssl: {
+    rejectUnauthorized: true,
+    ca: fs.readFileSync("./singlestore_bundle.pem")
+  },
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,

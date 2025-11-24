@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: backendnode
+    env: node
+    plan: free        # choose free plan or paid
+    region: oregon    # choose region closest to your DB
+    branch: main
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: DB_HOST
+        value: "svc-3482219c-a389-4079-b18b-d50662524e8a-shared-dml.aws-virginia-6.svc.singlestore.com"
+      - key: DB_USER
+        value: "farhat-6aa66"
+      - key: DB_PASSWORD
+        value: "NHKw%Tp#m16XS[pPf$?!cHQYR"
+      - key: DB_NAME
+        value: "job_portal"
+      - key: DB_PORT
+        value: "3333"
+      - key: NODE_ENV
+        value: "production"
